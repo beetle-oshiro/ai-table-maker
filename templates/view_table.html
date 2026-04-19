@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ table_name }} の中身</title>
+</head>
+<body>
+
+<h1>{{ table_name }} の中身</h1>
+
+{% if rows %}
+    <table border="1" cellpadding="8">
+        <tr>
+            {% for col in columns %}
+                <th>{{ col }}</th>
+            {% endfor %}
+        </tr>
+
+        {% for row in rows %}
+            <tr>
+                {% for value in row %}
+                    <td>{{ value }}</td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+{% else %}
+    <p>まだデータがありません。</p>
+{% endif %}
+
+<p>
+    <a href="/add/{{ table_name }}">このテーブルにデータを追加する</a>
+</p>
+
+<p>
+    <a href="/tables">テーブル一覧に戻る</a>
+</p>
+
+<p>
+    <a href="/">入力画面に戻る</a>
+</p>
+
+</body>
+</html>

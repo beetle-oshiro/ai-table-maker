@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>テーブル一覧</title>
+</head>
+<body>
+
+<h1>テーブル一覧</h1>
+
+<ul>
+    {% for table in tables %}
+        <li>
+            {{ table }}　
+            <a href="/view/{{ table }}">見る</a>　
+            <a href="/add/{{ table }}">追加</a>
+        </li>
+    {% endfor %}
+</ul>
+
+<p>
+    <a href="/">トップに戻る</a>
+</p>
+
+</body>
+</html>

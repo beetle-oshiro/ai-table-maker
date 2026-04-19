@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>確認画面</title>
+</head>
+<body>
+
+<h1>確認画面</h1>
+
+<h3>テーブル名</h3>
+<p>{{ table_name }}</p>
+
+<h3>カラム一覧</h3>
+<ul>
+    {% for col in columns %}
+        <li>{{ col.name }}（{{ col.type }}）</li>
+    {% endfor %}
+</ul>
+
+<form method="POST" action="/create">
+    <input type="hidden" name="table_name" value="{{ table_name }}">
+
+    {% for col in columns %}
+        <input type="hidden" name="col_name" value="{{ col.name }}">
+        <input type="hidden" name="col_type" value="{{ col.type }}">
+    {% endfor %}
+
+    <button type="submit">テーブル作成</button>
+</form>
+
+<br>
+
+<a href="/">戻る</a>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ table_name }} にデータ追加</title>
+</head>
+<body>
+
+<h1>{{ table_name }} にデータ追加</h1>
+
+<form method="POST" action="/insert/{{ table_name }}">
+    {% for col in columns %}
+        <p>
+            {{ col }}：<input type="text" name="{{ col }}">
+        </p>
+    {% endfor %}
+
+    <button type="submit">登録する</button>
+</form>
+
+<p>
+    <a href="/tables">テーブル一覧に戻る</a>
+</p>
+
+<p>
+    <a href="/view/{{ table_name }}">一覧に戻る</a>
+</p>
+
+</body>
+</html>
