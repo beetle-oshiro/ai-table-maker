@@ -1,44 +1,50 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>{{ table_name }} の中身</title>
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="form-container">
+      <h1>{{ table_name }} の中身</h1>
 
-<h1>{{ table_name }} の中身</h1>
-
-{% if rows %}
-    <table border="1" cellpadding="8">
-        <tr>
-            {% for col in columns %}
-                <th>{{ col }}</th>
-            {% endfor %}
-        </tr>
-
-        {% for row in rows %}
+      {% if rows %}
+      <div class="table-wrapper">
+        <table class="custom-table">
+          <thead>
             <tr>
-                {% for value in row %}
-                    <td>{{ value }}</td>
-                {% endfor %}
+              {% for col in columns %}
+              <th>{{ col }}</th>
+              {% endfor %}
             </tr>
-        {% endfor %}
-    </table>
-{% else %}
-    <p>まだデータがありません。</p>
-{% endif %}
+          </thead>
 
-<p>
-    <a href="/add/{{ table_name }}">このテーブルにデータを追加する</a>
-</p>
+          <tbody>
+            {% for row in rows %}
+            <tr>
+              {% for value in row %}
+              <td>{{ value }}</td>
+              {% endfor %}
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      {% else %}
+      <div class="empty-box">
+        <p>まだデータがありません。</p>
+      </div>
+      {% endif %}
 
-<p>
-    <a href="/tables">テーブル一覧に戻る</a>
-</p>
-
-<p>
-    <a href="/">入力画面に戻る</a>
-</p>
-
-</body>
+      <div class="table-actions-bottom">
+        <a href="/add/{{ table_name }}" class="main-btn">データを追加する</a>
+        <a href="/tables" class="sub-btn">一覧に戻る</a>
+        <a href="/" class="sub-btn">トップに戻る</a>
+      </div>
+    </div>
+  </body>
 </html>

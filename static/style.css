@@ -1,0 +1,326 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+}
+
+.form-container {
+    max-width: 600px;
+    margin: 40px auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* メイン画面 */
+.column-box {
+    background-color: #fffaf3;
+    border-left: 4px solid #f69002;
+    padding: 16px;
+    margin-top: 20px;
+    border-radius: 8px;
+}
+
+.column-box h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+label {
+    font-weight: bold;
+    color: #333;
+    margin-right: 6px;
+}
+
+input[type="text"],
+select {
+    padding: 10px 12px;
+    border: 1px solid #d8d0c8;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+
+input[type="text"] {
+    width: 220px;
+}
+
+select {
+    width: 140px;
+}
+
+input[type="text"]:focus,
+select:focus {
+    outline: none;
+    border-color: #f69002;
+    box-shadow: 0 0 0 3px rgba(246, 144, 2, 0.15);
+}
+
+button {
+    background-color: #f69002;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background-color: #df8200;
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+a {
+    color: #d97706;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* テーブル一覧画面 */
+.table-list {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.table-card {
+    background-color: #fff;
+    border-left: 4px solid #f69002;
+    padding: 15px 20px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.table-name {
+    font-weight: bold;
+    color: #333;
+}
+
+.table-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-secondary {
+    background-color: #eee;
+    color: #333;
+    padding: 6px 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.btn-secondary:hover {
+    background-color: #ddd;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 20px;
+}
+
+/* 確認画面 */
+.confirm-box {
+    background-color: #fffaf3;
+    border-left: 4px solid #f69002;
+    padding: 16px;
+    margin-top: 20px;
+    border-radius: 8px;
+}
+
+.confirm-text {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.column-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.column-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 10px;
+    border-bottom: 1px solid #ddd;
+    color: #333;
+}
+
+.col-name {
+    font-weight: bold;
+}
+
+.col-type {
+    background-color: #eee;
+    padding: 2px 8px;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.create-btn {
+    margin-top: 25px;
+}
+
+/* 作成完了画面 */
+.complete-box {
+    background-color: #f0fdf4;
+    border-left: 4px solid #22c55e;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.complete-text {
+    font-size: 18px;
+    font-weight: bold;
+    color: #166534;
+}
+
+.table-name-highlight {
+    color: #f69002;
+}
+
+.complete-actions {
+    margin-top: 25px;
+    display: flex;
+    gap: 15px;
+}
+
+.main-btn {
+    background-color: #f69002;
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.main-btn:hover {
+    background-color: #df8200;
+}
+
+.sub-btn {
+    background-color: #eee;
+    color: #333;
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+.sub-btn:hover {
+    background-color: #ddd;
+}
+
+/* テーブル中身画面 */
+.table-wrapper {
+    margin-top: 20px;
+    overflow-x: auto;
+}
+
+.custom-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.custom-table th {
+    background-color: #f69002;
+    color: #fff;
+    padding: 10px;
+    text-align: left;
+}
+
+.custom-table td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    color: #333;
+}
+
+.custom-table tr:hover {
+    background-color: #fff7ed;
+}
+
+.empty-box {
+    background-color: #fffaf3;
+    border-left: 4px solid #f69002;
+    padding: 16px;
+    margin-top: 20px;
+    border-radius: 8px;
+    text-align: center;
+    color: #333;
+}
+
+.table-actions-bottom {
+    margin-top: 25px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* データ追加画面 */
+.input-group-list {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group label {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.input-group input {
+    padding: 10px 12px;
+    border: 1px solid #d8d0c8;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #f69002;
+    box-shadow: 0 0 0 3px rgba(246, 144, 2, 0.15);
+}
+
+.submit-btn {
+    margin-top: 25px;
+    background-color: #f69002;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background-color: #df8200;
+}

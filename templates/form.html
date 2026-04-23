@@ -1,59 +1,73 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>AI Table Maker</title>
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="form-container">
+      <h1>AI Table Maker</h1>
 
-<h1>AI Table Maker</h1>
+      <form method="POST" action="/confirm">
+        <h3>テーブル名</h3>
+        <input type="text" name="table_name" required />
 
-<form method="POST" action="/confirm">
+        <div class="column-box">
+          <h3>カラム1</h3>
+          <label>名前：</label>
+          <input type="text" name="col1_name" required />
 
-    <h3>テーブル名</h3>
-    <input type="text" name="table_name" required>
+          <label>型：</label>
+          <select name="col1_type">
+            <option value="TEXT">TEXT</option>
+            <option value="INTEGER">INTEGER</option>
+            <option value="BOOLEAN">BOOLEAN</option>
+            <option value="DATE">DATE</option>
+            <option value="TIMESTAMP">TIMESTAMP</option>
+          </select>
+        </div>
 
-    <h3>カラム1</h3>
-    名前：<input type="text" name="col1_name" required>
-    型：
-    <select name="col1_type">
-        <option value="TEXT">TEXT</option>
-        <option value="INTEGER">INTEGER</option>
-        <option value="BOOLEAN">BOOLEAN</option>
-        <option value="DATE">DATE</option>
-        <option value="TIMESTAMP">TIMESTAMP</option>
-    </select>
+        <div class="column-box">
+          <h3>カラム2</h3>
+          <label>名前：</label>
+          <input type="text" name="col2_name" required />
 
-    <h3>カラム2</h3>
-    名前：<input type="text" name="col2_name" required>
-    型：
-    <select name="col2_type">
-        <option value="TEXT">TEXT</option>
-        <option value="INTEGER">INTEGER</option>
-        <option value="BOOLEAN">BOOLEAN</option>
-        <option value="DATE">DATE</option>
-        <option value="TIMESTAMP">TIMESTAMP</option>
-    </select>
+          <label>型：</label>
+          <select name="col2_type">
+            <option value="TEXT">TEXT</option>
+            <option value="INTEGER">INTEGER</option>
+            <option value="BOOLEAN">BOOLEAN</option>
+            <option value="DATE">DATE</option>
+            <option value="TIMESTAMP">TIMESTAMP</option>
+          </select>
+        </div>
 
-    <h3>カラム3</h3>
-    名前：<input type="text" name="col3_name" required>
-    型：
-    <select name="col3_type">
-        <option value="TEXT">TEXT</option>
-        <option value="INTEGER">INTEGER</option>
-        <option value="BOOLEAN">BOOLEAN</option>
-        <option value="DATE">DATE</option>
-        <option value="TIMESTAMP">TIMESTAMP</option>
-    </select>
+        <div class="column-box">
+          <h3>カラム3</h3>
+          <label>名前：</label>
+          <input type="text" name="col3_name" required />
 
-    <br><br>
-    <button type="submit">AIで確認</button>
+          <label>型：</label>
+          <select name="col3_type">
+            <option value="TEXT">TEXT</option>
+            <option value="INTEGER">INTEGER</option>
+            <option value="BOOLEAN">BOOLEAN</option>
+            <option value="DATE">DATE</option>
+            <option value="TIMESTAMP">TIMESTAMP</option>
+          </select>
+        </div>
 
-</form>
+        <br /><br />
+        <button type="submit">AIで確認</button>
+      </form>
 
-<p>
-    <a href="/tables">テーブル一覧を見る</a>
-</p>
-
-</body>
+      <p>
+        <a href="/tables">テーブル一覧を見る</a>
+      </p>
+    </div>
+  </body>
 </html>

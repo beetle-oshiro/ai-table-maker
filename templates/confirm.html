@@ -1,37 +1,48 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>確認画面</title>
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="form-container">
+      <h1>確認画面</h1>
 
-<h1>確認画面</h1>
+      <div class="confirm-box">
+        <h3>テーブル名</h3>
+        <p class="confirm-text">{{ table_name }}</p>
+      </div>
 
-<h3>テーブル名</h3>
-<p>{{ table_name }}</p>
+      <div class="confirm-box">
+        <h3>カラム一覧</h3>
+        <ul class="column-list">
+          {% for col in columns %}
+          <li>
+            <span class="col-name">{{ col.name }}</span>
+            <span class="col-type">{{ col.type }}</span>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
 
-<h3>カラム一覧</h3>
-<ul>
-    {% for col in columns %}
-        <li>{{ col.name }}（{{ col.type }}）</li>
-    {% endfor %}
-</ul>
+      <form method="POST" action="/create">
+        <input type="hidden" name="table_name" value="{{ table_name }}" />
 
-<form method="POST" action="/create">
-    <input type="hidden" name="table_name" value="{{ table_name }}">
+        {% for col in columns %}
+        <input type="hidden" name="col_name" value="{{ col.name }}" />
+        <input type="hidden" name="col_type" value="{{ col.type }}" />
+        {% endfor %}
 
-    {% for col in columns %}
-        <input type="hidden" name="col_name" value="{{ col.name }}">
-        <input type="hidden" name="col_type" value="{{ col.type }}">
-    {% endfor %}
+        <button type="submit" class="create-btn">テーブル作成</button>
+      </form>
 
-    <button type="submit">テーブル作成</button>
-</form>
-
-<br>
-
-<a href="/">戻る</a>
-
-</body>
+      <p>
+        <a href="/" class="back-link">← 戻る</a>
+      </p>
+    </div>
+  </body>
 </html>

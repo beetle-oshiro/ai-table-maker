@@ -1,22 +1,28 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>作成完了</title>
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="form-container">
+      <h1>作成完了</h1>
 
-<h1>作成完了</h1>
+      <div class="complete-box">
+        <p class="complete-text">
+          テーブル「<span class="table-name-highlight">{{ table_name }}</span
+          >」を作成しました！
+        </p>
+      </div>
 
-<p>AI整理後のテーブル「{{ table_name }}」を作成しました！</p>
-
-<p>
-    <a href="/view/{{ table_name }}">このテーブルを見る</a>
-</p>
-
-<p>
-    <a href="/">入力画面に戻る</a>
-</p>
-
-</body>
+      <div class="complete-actions">
+        <a href="/view/{{ table_name }}" class="main-btn">このテーブルを見る</a>
+        <a href="/" class="sub-btn">入力画面に戻る</a>
+      </div>
+    </div>
+  </body>
 </html>
